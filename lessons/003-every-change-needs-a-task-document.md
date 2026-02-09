@@ -45,3 +45,4 @@ When choosing between spec and task: if the change requires a design decision or
 
 - [001 — Separate Meta-Learning from Project Repos](001-separate-meta-learning-from-project-repos.md): The task document rule generates project-specific knowledge, while lesson 001's meta-repo captures the process pattern itself.
 - [002 — Project Insights Folder Complements ADRs](002-project-insights-folder-complements-adrs.md): ADRs capture architectural decisions, task docs capture implementation intent. Together with insights, they form three layers of project knowledge.
+- [004 — Retroactive Documentation: When Adopting a Task-Doc Rule Mid-Project](004-retroactive-documentation-when-adopting-task-doc-rule.md): What to do when this rule is adopted mid-project and prior work has no task docs — use reconciliation points instead of backfilling.
