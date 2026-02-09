@@ -15,7 +15,7 @@ ADR folders captured the "what and why" of architectural choices, but there was 
 
 ## Lesson
 
-Add an `insights/` folder inside each project repo to capture implementation-level lessons learned. These are distinct from ADRs:
+Create an `insights/` directory to capture implementation-level lessons learned. These are distinct from ADRs:
 
 | | ADRs | Insights |
 |---|---|---|
@@ -28,7 +28,9 @@ This gives developers a place to record "things I wish I knew when I started thi
 
 ## Decision Guidance
 
-When setting up a new project repo, create an `insights/` directory alongside any `decisions/` (ADR) directory. Use ADRs for choices that shape the system architecture. Use insights for practical implementation knowledge — integration gotchas, performance discoveries, tooling tips, and patterns that emerged during development. If you find yourself writing an ADR that has no real "decision" in it, it's probably an insight.
+When setting up a new project, create an `insights/` directory alongside any `decisions/` (ADR) directory. Use ADRs for choices that shape the system architecture. Use insights for practical implementation knowledge — integration gotchas, performance discoveries, tooling tips, and patterns that emerged during development. If you find yourself writing an ADR that has no real "decision" in it, it's probably an insight.
+
+**Centralized vs. per-repo:** If the project has a shared documentation repo (like a `platform-docs/`), centralize all insights there rather than creating `insights/` folders in every repo. Use category subdirectories (e.g., `architecture/`, `development/`, `infrastructure/`) to organize by topic. This avoids fragmenting the collection across repos and keeps a single searchable source of truth. Only create per-repo insights folders when repos are owned by separate teams without a shared docs repo.
 
 ## Related Lessons
 
