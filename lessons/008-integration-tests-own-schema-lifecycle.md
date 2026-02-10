@@ -33,6 +33,16 @@ This separates two concerns:
 - **Schema lifecycle** (TestMain) — happens once per test run, ensures migrations work end-to-end
 - **Data isolation** (each test) — truncate rows between tests so they don't interfere
 
+### Cleanup-at-start, not cleanup-at-end
+
+Each test truncates its tables **as its first action**, not in a `defer` or `t.Cleanup()` at the end. This matters because:
+
+- If Test A panics or calls `t.FailNow()`, deferred cleanup may not execute (depending on how the failure propagates). Test B would inherit dirty rows and fail for the wrong reason.
+- Cleanup-at-start is self-healing: no matter what happened to the previous test, the current test always begins with empty tables.
+- End-of-test cleanup has a second problem — the last test in the suite leaves dirty data behind. If a developer then manually queries the database to inspect state, they see stale test data that looks like real data.
+
+The cost of cleanup-at-start is negligible (one `TRUNCATE ... CASCADE` per test) and eliminates an entire class of flaky test failures caused by ordering dependencies.
+
 ### Why not just "make migrations idempotent"?
 
 Some DDL is naturally idempotent (`CREATE TABLE IF NOT EXISTS`). Some is not (`ALTER TABLE RENAME COLUMN`, `ALTER TABLE ADD COLUMN` without guards). You can wrap non-idempotent statements in `DO $$ BEGIN ... EXCEPTION WHEN ... END $$` blocks, but that adds complexity to production migration files purely for test convenience. Migrations are designed to run once in sequence, not to be replayed — fighting that design costs more than owning the lifecycle.
@@ -46,7 +56,7 @@ This works but introduces a hidden dependency: the test suite assumes someone el
 When writing integration tests against a real database:
 
 1. **`TestMain` drops all tables, then runs migrations.** This guarantees every test run starts from a known schema state and exercises the full migration sequence.
-2. **Individual tests truncate tables, not schema.** Row cleanup between tests is cheap and sufficient for data isolation.
+2. **Individual tests truncate tables at the start, not the end.** Cleanup-at-start is self-healing — a prior test's failure can't leave dirty state for the next test. `defer` or `t.Cleanup()` teardown is skippable; truncation as the first line of a test is not.
 3. **Don't suppress migration errors.** If a migration fails against a blank schema, that's a real bug. Fatal immediately.
 4. **Accept the trade-off:** manual test data inserted via `psql` during development will be lost when integration tests run. Integration tests own the database.
 
