@@ -41,6 +41,8 @@ To address this, a "backlog" strategy was implemented, leveraging the file syste
     *   For features that are partially implemented or have identified gaps, the `platform-docs/design-spec.md` can directly reference the relevant backlog item.
     *   This provides a direct link from design specifications to the current status of implementation or identified future work, offering a comprehensive view for the AI. For example: `For current status and future work, refer to the backlog task: [`platform-services/tasks/BACKLOG.md`](../platform-services/tasks/BACKLOG.md#000_dlq-implementationmd---dlq-implementation-status-event-handler-service)`.
 
+6.  **`PROJECT.md` Update Reminder**: Every task or backlog item that impacts the overall project status tracked in `PROJECT.md` should explicitly include a reminder within its own acceptance criteria or verification section to update `PROJECT.md` upon completion. This serves as a critical self-correction mechanism to ensure high-level progress tracking remains accurate.
+
 ## Benefits for AI Agents
 
 This structured approach significantly benefits AI agents by:
