@@ -1,4 +1,4 @@
-# Lesson 012: Structured Backlog Management for AI Agents
+# Lesson 007: Structured Backlog Management for AI Agents
 
 ## Context
 
