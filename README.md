@@ -51,3 +51,4 @@ Links to other lessons that connect to this one.
 | [009](lessons/009-single-source-of-truth-for-tasks.md) | Single Source of Truth for Task Numbering |
 | [010](lessons/010-organize-project-insights-by-category.md) | Organizing Project Insights into Logical Categories |
 | [011](lessons/011-need-for-component-guidelines.md) | The Need for Component-Specific Guidelines |
+| [012](lessons/012-use-chat-for-architecture-discussions.md) | Use Claude Chat for Architecture Discussions, Reserve Claude Code for Implementation |
