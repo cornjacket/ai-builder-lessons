@@ -56,3 +56,4 @@ Links to other lessons that connect to this one.
 | [014](lessons/014-separate-task-tracking-by-scope.md) | Separate Task Tracking by Scope, Not by Repo Count |
 | [015](lessons/015-bootstrap-scripts-for-multi-repo-workspaces.md) | Bootstrap Scripts for Multi-Repo Workspaces |
 | [016](lessons/016-commit-task-doc-before-implementation.md) | Commit the Task Doc Before Implementation |
+| [017](lessons/017-git-worktrees-for-parallel-ai-work.md) | Git Worktrees for Parallel AI Work |
