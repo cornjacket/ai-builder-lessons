@@ -53,3 +53,6 @@ Links to other lessons that connect to this one.
 | [011](lessons/011-need-for-component-guidelines.md) | The Need for Component-Specific Guidelines |
 | [012](lessons/012-use-chat-for-architecture-discussions.md) | Use Claude Chat for Architecture Discussions, Reserve Claude Code for Implementation |
 | [013](lessons/013-concise-output-reduces-token-waste.md) | Concise Output Reduces Token Waste |
+| [014](lessons/014-separate-task-tracking-by-scope.md) | Separate Task Tracking by Scope, Not by Repo Count |
+| [015](lessons/015-bootstrap-scripts-for-multi-repo-workspaces.md) | Bootstrap Scripts for Multi-Repo Workspaces |
+| [016](lessons/016-commit-task-doc-before-implementation.md) | Commit the Task Doc Before Implementation |
