@@ -57,3 +57,23 @@ Links to other lessons that connect to this one.
 | [015](lessons/015-bootstrap-scripts-for-multi-repo-workspaces.md) | Bootstrap Scripts for Multi-Repo Workspaces |
 | [016](lessons/016-commit-task-doc-before-implementation.md) | Commit the Task Doc Before Implementation |
 | [017](lessons/017-git-worktrees-for-parallel-ai-work.md) | Git Worktrees for Parallel AI Work |
+| [018](lessons/018-review-ai-diffs-before-committing.md) | Review AI Diffs Before Committing |
+| [019](lessons/019-instruction-file-design.md) | Instruction File Design (Ground Rules) |
+| [020](lessons/020-proactive-knowledge-capture.md) | Proactive Knowledge Capture During AI Sessions |
+| [021](lessons/021-specialist-agents-vs-single-generalist.md) | Specialist Agents vs Single Generalist |
+| [022](lessons/022-selective-reference-doc-loading.md) | Selective Reference Doc Loading |
+| [023](lessons/023-big-doc-threshold.md) | Define a Big Doc Threshold |
+| [024](lessons/024-perfect-recall-fallacy.md) | The Perfect Recall Fallacy |
+| [025](lessons/025-sandbox-for-experiments.md) | Use a Sandbox for Throwaway Experiments |
+| [026](lessons/026-verify-assumptions-before-implementing.md) | Verify Assumptions Before Implementing |
+| [027](lessons/027-chain-of-small-steps.md) | Chain of Small Verifiable Steps |
+| [028](lessons/028-predictive-tdd.md) | Predictive TDD: Predict Before Running Tests |
+| [029](lessons/029-git-hooks-for-ai-compliance.md) | Git Hooks for AI Compliance |
+| [030](lessons/030-instruction-sandwich.md) | Instruction Sandwich: Reinforce Critical Rules |
+| [031](lessons/031-silent-misalignment.md) | Silent Misalignment: When the AI Agrees But Is Wrong |
+| [032](lessons/032-active-partner.md) | Give AI Permission to Push Back |
+| [033](lessons/033-context-markers-for-rot-detection.md) | Context Markers for Rot Detection |
+| [034](lessons/034-human-prompting-best-practices.md) | Human Prompting Best Practices |
+| [035](lessons/035-organize-documents-for-ai-readability.md) | Organize Documents for AI Readability |
+| [036](lessons/036-directory-structure-as-status-indicator.md) | Use Directory Structure as Status Indicator |
+| [037](lessons/037-context-hygiene-dentist-pattern.md) | Context Hygiene: The Dentist Pattern |
