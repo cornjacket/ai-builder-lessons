@@ -77,3 +77,4 @@ Links to other lessons that connect to this one.
 | [035](lessons/035-organize-documents-for-ai-readability.md) | Organize Documents for AI Readability |
 | [036](lessons/036-directory-structure-as-status-indicator.md) | Use Directory Structure as Status Indicator |
 | [037](lessons/037-context-hygiene-dentist-pattern.md) | Context Hygiene: The Dentist Pattern |
+| [038](lessons/038-work-log-at-task-granularity.md) | Running Work Log at Task Granularity, Indexed by Commit Hash |
