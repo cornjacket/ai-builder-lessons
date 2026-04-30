@@ -11,9 +11,19 @@
 
 Keep a `log.md` at the repo root as a date-ordered record of work at **task / question / concept** granularity — *not* per prompt. Multiple prompts inside the same task share one entry. Open a new entry only when the focus changes: a new task starts, the user asks a substantively different question, or a meaningfully new concept comes up. Each entry is one or two sentences of *what changed and why*; the diff and `git log` carry the rest. **Every entry ends with the short commit hash that delivered the work** (e.g. ``Commit `abc1234`.``), which is what lets the log act as a quick index back into git history.
 
+A canonical entry format makes the log greppable and machine-parseable:
+
+```
+- **YYYY-MM-DD** — <one or two sentences>. Task: `<hex-id>-<task-name>`. [Subtask: `<hex-id>-<NNNN>-<subtask-name>`.] Commit: `<short-hash>`.
+```
+
+Use the fully-qualified task name (matching commit trailers and task READMEs); include `Subtask:` only when the entry is subtask-scoped.
+
 Pair the log with a numbered rule in `CLAUDE.md` (or equivalent instruction file). Without an enforcing rule, the log either drifts to per-prompt noise or stops being maintained. The rule must call out both failure modes — entries-per-prompt *and* tasks-without-entries — and must require the commit hash.
 
-Back-fill discipline matters: when an entry is written before its commit lands, add the hash directly in `log.md` after the commit and let it ride into the next task's commit. **Do not create a dedicated commit just to back-fill the hash.** Two commits per task is a smell and trains the wrong habit.
+Back-fill discipline matters: when an entry is written before its commit lands, add the hash directly in `log.md` after the commit and let it ride into the next task's commit. **Do not create a dedicated commit just to back-fill the hash.** Two commits per task is a smell and trains the wrong habit. A small helper script (e.g. `log-add.sh --task <name> -- <description>` for appending with a `_pending_` placeholder, and `log-add.sh --backfill` for resolving placeholders to short hashes) reduces the friction enough that the rule actually gets followed.
+
+**Make log edits visible in chat.** Whenever the AI edits `log.md` — whether appending a new entry or back-filling a hash — it must announce the edit in the conversation with the literal string `📝 log.md updated` on its own line. Without this, log edits are invisible inside long tool-call sequences, and the user cannot tell from the transcript whether an entry was actually written. The emoji + fixed string makes log activity scannable at a glance and greppable across a session transcript. This is the same idea as a console log marker: silent file edits do not count as a record of work.
 
 ## Decision Guidance
 
